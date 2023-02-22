@@ -10,6 +10,11 @@ class BasicDesignScreen extends StatelessWidget {
         children: [
           Image(image: AssetImage('assets/landscape.jpg')),
           Title(),
+          SizedBox(
+            height: 50,
+          ),
+          //Bottom Section
+          ButtonSection()
         ],
       ),
     );
@@ -48,6 +53,55 @@ class Title extends StatelessWidget {
           const Text('41')
         ],
       ),
+    );
+  }
+}
+
+class ButtonSection extends StatelessWidget {
+  const ButtonSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: const [
+            Icon(
+              Icons.add,
+              color: Colors.lightBlueAccent,
+            ),
+            Text(
+              'Text',
+              style: TextStyle(color: Colors.lightBlueAccent),
+            )
+          ],
+        ),
+        Column(
+          children: const [
+            Icon(
+              Icons.add,
+              color: Colors.lightBlueAccent,
+            ),
+            Text(
+              'Text',
+              style: TextStyle(color: Colors.lightBlueAccent),
+            )
+          ],
+        ),
+        Column(
+          children: const [
+            Icon(
+              Icons.add,
+              color: Colors.lightBlueAccent,
+            ),
+            Text(
+              'Text',
+              style: TextStyle(color: Colors.lightBlueAccent),
+            )
+          ],
+        )
+      ],
     );
   }
 }
