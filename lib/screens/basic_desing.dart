@@ -7,14 +7,15 @@ class BasicDesignScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        children: const [
           Image(image: AssetImage('assets/landscape.jpg')),
           Title(),
           SizedBox(
-            height: 50,
+            height: 40,
           ),
           //Bottom Section
-          ButtonSection()
+          ButtonSection(),
+          LastText()
         ],
       ),
     );
@@ -29,7 +30,7 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
       child: Row(
         children: [
           Column(
@@ -37,11 +38,14 @@ class Title extends StatelessWidget {
             children: const [
               Text(
                 'Oeschinen Lake Campground',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
+          SizedBox(
+            height: 10,
+          ),
               Text(
                 'Kanderteg, Switzerland',
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.grey, fontSize: 16),
               )
             ],
           ),
@@ -50,7 +54,7 @@ class Title extends StatelessWidget {
             Icons.star,
             color: Colors.red,
           ),
-          const Text('41')
+          const Text('41',style: TextStyle(color: Colors.black, fontSize: 18))
         ],
       ),
     );
@@ -68,40 +72,57 @@ class ButtonSection extends StatelessWidget {
         Column(
           children: const [
             Icon(
-              Icons.add,
+              Icons.call,
               color: Colors.lightBlueAccent,
+              size: 30,
             ),
             Text(
-              'Text',
-              style: TextStyle(color: Colors.lightBlueAccent),
+              'CALL',
+              style: TextStyle(color: Colors.lightBlueAccent, fontSize: 18),
             )
           ],
         ),
         Column(
           children: const [
             Icon(
-              Icons.add,
+              Icons.arrow_outward_rounded,
               color: Colors.lightBlueAccent,
+              size: 30,
             ),
             Text(
-              'Text',
-              style: TextStyle(color: Colors.lightBlueAccent),
+              'ROUTE',
+              style: TextStyle(color: Colors.lightBlueAccent, fontSize: 18),
             )
           ],
         ),
         Column(
           children: const [
             Icon(
-              Icons.add,
+              Icons.share,
               color: Colors.lightBlueAccent,
+              size: 30,
             ),
             Text(
-              'Text',
-              style: TextStyle(color: Colors.lightBlueAccent),
+              'SHARE',
+              style: TextStyle(color: Colors.lightBlueAccent, fontSize: 18),
             )
           ],
         )
       ],
+    );
+  }
+}
+
+
+class LastText extends StatelessWidget {
+  const LastText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(25),
+      child: Text(
+        'Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto Esto es una texto  Esto es una texto Esto es una texto Esto es una texto Esto es una texto',textAlign: TextAlign.justify),
     );
   }
 }
